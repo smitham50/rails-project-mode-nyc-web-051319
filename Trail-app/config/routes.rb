@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :trails, only: [:index]
-get 'trails/:@trail', to: 'trails#show', as: 'trail'
+resources :trails, only: [:index, :show]
 
 end

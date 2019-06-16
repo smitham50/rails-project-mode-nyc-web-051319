@@ -1,0 +1,31 @@
+<h3><%= @trail.name %></h3>
+
+Trail Type: <%= @trail.trail_type %><br><br>
+
+Summary: <%= @trail.summary %><br><br>
+
+Difficulty: <%= @trail.difficulty %><br><br>
+
+Stars: <%= @trail.stars %><br><br>
+
+Location: <%= @trail.location %><br><br>
+
+Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
+
+Length: <%= @trail.length %><br><br>
+
+Ascent: <%= @trail.ascent %><br><br>
+
+Descent: <%= @trail.descent %><br><br>
+
+High: <%= @trail.high %><br><br>
+
+Low: <%= @trail.low %><br><br>
+
+Geolocation: <%= "#{@trail.latitude}, #{@trail.longitude}" %><br><br>
+
+Condition Status: <%= @trail.conditionStatus %><br><br>
+
+Condition Details: <%= @trail.conditionDetails %><br><br>
+
+Condition Date: <%= @trail.conditionDate %><br><br>
