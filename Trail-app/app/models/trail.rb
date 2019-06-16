@@ -10,6 +10,10 @@ class Trail < ApplicationRecord
     @trail_hash
   end
 
+  def geolocation
+    @geolocation = "#{self.latitude}, #{self.longitude}"
+  end
+
 end
 # 40.71427, -74.00597
 
