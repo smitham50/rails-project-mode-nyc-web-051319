@@ -1,7 +1,8 @@
 Trails:
 
 <ul>
-<% @trails.each do |trail_hash| %>
-  <li><%= trail_hash %></li><br>
+<% @trails.each do |key, trail_array| %>
+  <li><%= link_to trail_array[@count]["name"], trail_path %></li><br>
+  <% @count += 1 %>
 <% end %>
 </ul>
