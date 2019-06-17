@@ -1,9 +1,17 @@
 <h3><%= @trail.name %></h3>
 
+<br>
+
+<% if !@trail.imgMedium.empty?%>
+  <img src=<%=@trail.imgMedium%> alt=<%=@trail.name%> height=auto width=auto><br><br>
+<% end %>
+
 <iframe width="700" height="300" frameborder="0" style="border:0"
  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGipspPekQG4tmYAZmqCuNArYcQSNdfyw&q=<%=@trail.geolocation%>"
  allowfullscreen>
 </iframe><br><br>
+
+<br>
 
 Summary: <%= @trail.summary %><br><br>
 
