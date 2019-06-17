@@ -17,12 +17,18 @@ Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
 
 Length: <%= "#{@trail.length} miles" %><br><br>
 
-Ascent: <%= @trail.ascent %><br><br>
+Ascent: <%= "#{@trail.ascent} ft." %><br><br>
 
-Descent: <%= @trail.descent %><br><br>
+Descent: <%= "#{@trail.descent} ft." %><br><br>
+
+Highest Elevation: <%= "#{@trail.high} ft." %><br><br>
+
+Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 
 Condition Status: <%= @trail.conditionStatus %><br><br>
 
 Condition Details: <%= @trail.conditionDetails %><br><br>
 
 Condition Date: <%= @trail.conditionDate %><br><br>
+
+<%= button_to "Return to Trails", trails_path, method: "get" %>
