@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_175111) do
+ActiveRecord::Schema.define(version: 2019_06_17_144830) do
 
   create_table "trails", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 2019_06_16_175111) do
     t.string "conditionStatus"
     t.string "conditionDetails"
     t.datetime "conditionDate"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
