@@ -5,8 +5,6 @@
  allowfullscreen>
 </iframe><br><br>
 
-Trail Type: <%= @trail.trail_type %><br><br>
-
 Summary: <%= @trail.summary %><br><br>
 
 Difficulty: <%= @trail.difficulty %><br><br>
@@ -17,13 +15,11 @@ Location: <%= @trail.location %><br><br>
 
 Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
 
-Length: <%= @trail.length %><br><br>
+Length: <%= "#{@trail.length} miles" %><br><br>
 
 Ascent: <%= @trail.ascent %><br><br>
 
 Descent: <%= @trail.descent %><br><br>
-
-Geolocation: <%= "#{@trail.latitude}, #{@trail.longitude}" %><br><br>
 
 Condition Status: <%= @trail.conditionStatus %><br><br>
 

@@ -2,6 +2,7 @@
 
 <ul>
 <% @trails.each do |trail| %>
-  <li><%= link_to trail["name"], trail_path(trail) %></li><br>
+  <% destination = trail.geolocation %>
+  <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.round(2).to_s} miles from NYC"%></li><br>
 <% end %>
 </ul>
