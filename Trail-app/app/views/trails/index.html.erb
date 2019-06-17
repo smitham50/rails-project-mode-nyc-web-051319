@@ -1,5 +1,10 @@
 <h3>Trails:</h3>
 
+<%= form_tag(trails_path, method: :get) do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag ("Search") %>
+<% end %>
+
 <ul>
 <% @trails.each do |trail| %>
   <% destination = trail.geolocation %>
