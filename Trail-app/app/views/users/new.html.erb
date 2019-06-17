@@ -1,0 +1,9 @@
+<h1>Sign Up Page</h1>
+
+<%= form_for @user do |f| %>
+<%= f.lablel "User Name" %>
+<%= f.textfield :username %>
+<%= f.label "Password"%>
+<%= f.textfield :password_digest %>
+<%= f.submit %>
+<% end %>
