@@ -1,0 +1,32 @@
+<h3><%= @trail.name %></h3>
+
+<iframe width="700" height="300" frameborder="0" style="border:0"
+ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGipspPekQG4tmYAZmqCuNArYcQSNdfyw&q=<%=@trail.geolocation%>"
+ allowfullscreen>
+</iframe><br><br>
+
+Trail Type: <%= @trail.trail_type %><br><br>
+
+Summary: <%= @trail.summary %><br><br>
+
+Difficulty: <%= @trail.difficulty %><br><br>
+
+Stars: <%= @trail.stars %><br><br>
+
+Location: <%= @trail.location %><br><br>
+
+Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
+
+Length: <%= @trail.length %><br><br>
+
+Ascent: <%= @trail.ascent %><br><br>
+
+Descent: <%= @trail.descent %><br><br>
+
+Geolocation: <%= "#{@trail.latitude}, #{@trail.longitude}" %><br><br>
+
+Condition Status: <%= @trail.conditionStatus %><br><br>
+
+Condition Details: <%= @trail.conditionDetails %><br><br>
+
+Condition Date: <%= @trail.conditionDate %><br><br>
