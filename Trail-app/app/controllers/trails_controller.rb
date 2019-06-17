@@ -1,4 +1,5 @@
 class TrailsController < ApplicationController
+  
   def index
     if params[:search]
       @trails = Trail.all.select do |trail|

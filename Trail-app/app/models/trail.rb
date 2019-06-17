@@ -16,19 +16,11 @@ class Trail < ApplicationRecord
   end
 
   def distance_from_ny
-    Geocoder::Calculations.distance_between([40.71427, -74.00597], [self.latitude.to_f, self.longitude.to_f])
+    Geocoder::Calculations.distance_between([40.71427, -74.00597], [self.latitude.to_f, self.longitude.to_f]).round(2)
+  end
+
+  def self.distance_sort
+    self.all.sort_by {|trail| trail.distance_from_ny}
   end
 
 end
-# 40.71427, -74.00597
-
-# possible APIs:
-
-# 'https://data.ny.gov/api/views/9ri8-5uc7/rows.json?accessType=DOWNLOAD'
-
-# https://data.cityofnewyork.us/resource/tqcb-ntkc.json
-
- # https://data.ny.gov/api/views/7gkb-pzs9/rows.json?accessType=DOWNLOAD
-
-
-#camping: https://data.ny.gov/api/views/tnqf-vydw/rows.json?accessType=DOWNLOAD

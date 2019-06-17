@@ -1,13 +1,17 @@
 <h3>Trails:</h3>
 
+<br>
+
 <%= form_tag(trails_path, method: :get) do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], placeholder: "Trail Name" %>
   <%= submit_tag ("Search") %>
 <% end %>
 
+<br>
+
 <ul>
-<% @trails.each do |trail| %>
+<% @trails.distance_sort.each do |trail| %>
   <% destination = trail.geolocation %>
-  <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.round(2).to_s} miles from NYC"%></li><br>
+  <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles from NYC"%></li><br>
 <% end %>
 </ul>
