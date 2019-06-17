@@ -1,12 +1,11 @@
 require 'rest-client'
 require 'json'
-require 'geocoder'
 
 class Trail < ApplicationRecord
   include RestClient
 
   def self.get_trail_info
-    trail_json = RestClient.get('https://www.hikingproject.com/data/get-trails?lat=40.71427&lon=-74.00597&maxDistance=100&maxResults=400&key=200492212-d7400571b0620563169df18724f8dc46')
+    trail_json = RestClient.get('https://www.hikingproject.com/data/get-trails?lat=40.71427&lon=-74.00597&maxDistance=150&maxResults=250&key=200492212-d7400571b0620563169df18724f8dc46')
     @trail_hash = JSON.parse(trail_json)
     @trail_hash
   end
@@ -16,8 +15,8 @@ class Trail < ApplicationRecord
   end
 
   def distance_from_ny
-    Geocoder::Calculations.distance_between([40.71427, -74.00597], [self.latitude.to_f, self.longitude.to_f])
-  end
+   Geocoder::Calculations.distance_between([40.71427, -74.00597], [self.latitude.to_f, self.longitude.to_f])
+ end
 
 end
 # 40.71427, -74.00597
