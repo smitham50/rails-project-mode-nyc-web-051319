@@ -39,6 +39,8 @@ Condition Details: <%= @trail.conditionDetails %><br><br>
 
 Condition Date: <%= @trail.conditionDate %><br><br>
 
-<%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
+<% if logged_in? %>
+  <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
+<% end %>
 
 <%= button_to "Return to Trails", trails_path, method: "get" %>

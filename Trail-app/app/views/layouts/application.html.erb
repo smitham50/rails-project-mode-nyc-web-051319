@@ -17,7 +17,9 @@
       <% end  %>
     </div>
     <br>
-    <%= button_to "Your Profile", user_path(session[:user_id]), method: "get" %>
+    <% if logged_in? %>
+      <%= button_to "Your Profile", user_path(session[:user_id]), method: "get" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
