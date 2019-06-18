@@ -6,6 +6,8 @@ resources :users, only: [:index, :create]
 
 resources :user_trails, only: [:new, :create]
 
+resources :reviews, only: [:new, :create]
+
 # get '/users', to: "users#index"
 get '/signup', to: "users#new", as: "signup"
 get '/show/:id', to: "users#show", as: "user"

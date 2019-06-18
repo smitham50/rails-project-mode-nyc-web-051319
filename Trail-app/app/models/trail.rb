@@ -5,6 +5,7 @@ class Trail < ApplicationRecord
   include RestClient
   has_many :users, through: :user_trails
   has_many :user_trails
+  has_many :reviews
 
   def self.get_trail_info
     trail_json = RestClient.get('https://www.hikingproject.com/data/get-trails?lat=40.71427&lon=-74.00597&maxDistance=100&maxResults=500&key=200492212-d7400571b0620563169df18724f8dc46')
