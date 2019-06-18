@@ -5,14 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="../assets/stylesheets/application.scss">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if logged_in?  %>
-    <%= button_to "Log Out", logout_path, method: :delete %>
-    <% end  %>
+    <div class="logout">
+      <%= button_to "Log Out", logout_path, method: :delete %>
+      <% end  %>
+    </div>
+    <br>
+    <%= button_to "Your Profile", user_path(session[:user_id]), method: "get" %>
     <%= yield %>
   </body>
 </html>

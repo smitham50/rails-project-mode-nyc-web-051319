@@ -1,0 +1,13 @@
+<h3><%= @user.username %></h3><br>
+
+
+My Hikes: <br><br>
+
+<ul>
+<% @user.trails.each do |trail| %>
+  <li><%= link_to trail.name, trail_path(trail) %></li><br>
+<% end %>
+</ul>
+<br>
+
+<%= button_to "Return to Trails", trails_path, method: "get" %>
