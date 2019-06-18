@@ -9,16 +9,19 @@
 
 <br>
 
+<% def distance_helper(trail) %>
+  <% destination = trail.geolocation %>
+    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles away"%></li><br>
+<% end %>
+
 <ul>
 <% if @trails == Trail.all %>
   <% @trails.distance_sort.each do |trail| %>
-    <% destination = trail.geolocation %>
-    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles away"%></li><br>
+    <% distance_helper(trail) %>
     <% end %>
 <% else %>
     <% @trails.each do |trail| %>
-    <% destination = trail.geolocation %>
-    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles away"%></li><br>
+      <% distance_helper(trail) %>
   <% end %>
 <% end %>
 </ul>
