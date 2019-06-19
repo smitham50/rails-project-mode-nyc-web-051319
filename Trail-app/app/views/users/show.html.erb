@@ -13,14 +13,26 @@ My Hikes: <br><br>
 
 <h3>My Reviews</h3>
 
+
 <ol>
-    <% @user.reviews.each do |review| %><br>
-    <li><%=link_to Trail.find(review.trail_id).name, "/trails/#{review.trail_id}"%></li>
-      <ul>
-        <li><b><%= review.comment %></b></li>
-      </ul>
+  <% @user.trails.each do |trail| %><br>
+    <% if @user.trail_reviews(trail).count > 0 %>
+      <li>
+        <%=link_to trail.name, "/trails/#{trail.id}"%>
+      </li>
     <% end %>
+    <% @user.trail_reviews(trail).each do |review| %>
+      <ul>
+        <li>
+          <%= review.comment%>
+          <%= button_to "Delete Review", {action: "destroy", controller: "reviews", id: review.id}, method: :delete %>
+        </li>
+      </ul>
+    <%end%>
+  <% end %>
 </ol>
+
+
 
 
 
