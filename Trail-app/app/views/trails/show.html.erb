@@ -2,7 +2,7 @@
 
 <br>
 
-<div class="section">  
+<div class="section">
 <% if !@trail.imgMedium.empty?%>
   <img src=<%=@trail.imgMedium%> alt=<%=@trail.name%> height=auto width=auto><br><br>
 <% end %>
@@ -16,7 +16,17 @@
 <div class="aside">
 Summary: <%= @trail.summary %><br><br>
 
-Difficulty: <%= @trail.difficulty %><br><br>
+<% if @trail.difficulty == "green" %>
+  <%= "Difficulty: Easy" %>
+<% elsif @trail.difficulty == "greeBlue" %>
+  <%= "Difficulty: Easy/Medium" %>
+<% elsif @trail.difficulty == "blue" %>
+  <%= "Difficulty: Medium" %>
+<% elsif @trail.difficulty == "blueBlack" %>
+  <%= "Difficulty: Medium/Hard" %>
+<% elsif @trail.difficulty == "black" %>
+  <%= "Difficulty: Hard" %>
+  <% end %><br><br>
 
 Stars: <%= @trail.stars %><br><br>
 
@@ -38,3 +48,6 @@ Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
   <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
 <% end %>
 </div>
+
+
+<!-- Trail difficulties: green greenBlue blue blueBlack black -->
