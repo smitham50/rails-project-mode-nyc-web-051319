@@ -11,7 +11,7 @@
 
 <% def distance_helper(trail) %>
   <% destination = trail.geolocation %>
-    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles away"%></li><br>
+    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles from NYC" %></li><br>
 <% end %>
 
 <ul>
