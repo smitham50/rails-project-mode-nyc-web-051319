@@ -1,16 +1,18 @@
 <h3><%= @user.username %></h3><br>
 
 
-My Hikes: <br><br>
-
+<div class="hikes">
+<h3>My Hikes</h3>
+<br>
 <ul>
 <% @user.trails.each do |trail| %>
   <li><%= link_to trail.name, trail_path(trail) %></li><br>
 <% end %>
 </ul>
-<br>
+</div>
 
 
+<div class="reviews">
 <h3>My Reviews</h3>
 
 
