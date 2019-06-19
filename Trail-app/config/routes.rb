@@ -18,4 +18,5 @@ post '/login', to: "sessions#create"
 delete "/logout", to: "sessions#destroy"
 
 post '/reviews', to: "reviews#create"
+
 end

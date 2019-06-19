@@ -47,17 +47,14 @@ Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 <% if logged_in? %>
   <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
 <% end %>
-</div>
-
-
 
 <h4>Reviews</h4>
 <ol>
 <% @trail.reviews.each do |review| %><br>
-  <li><%= User.find(review.user_id).username %></li>
+  <li><b>Username:</b><b><%= User.find(review.user_id).username %></b></li>
     <ul>
       <li>
-        <%=link_to review.comment, "/show/#{review.user_id}" %>
+        <%=review.comment %>
       </li>
     </ul>
 
@@ -70,5 +67,7 @@ Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 <%= f.text_area(:comment, cols: 60, rows: 5)%>
 <%= f.submit  %>
 <% end %>
-<% end %><br>
+<% end %><br><br>
+
 <%= button_to "Return to Trails", trails_path, method: "get" %>
+</div>
