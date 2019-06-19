@@ -13,4 +13,9 @@ class User < ApplicationRecord
     "#{self.address}, #{self.city}, #{self.state} #{self.zip_code}"
   end
 
+  def trail_reviews(trail)
+    trail.reviews.select do |r|
+      r.user_id == self.id
+    end
+  end
 end
