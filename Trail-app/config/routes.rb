@@ -16,4 +16,6 @@ get '/show/:id', to: "users#show", as: "user"
 get '/', to: "sessions#new", as: "login"
 post '/login', to: "sessions#create"
 delete "/logout", to: "sessions#destroy"
+
+post '/reviews', to: "reviews#create"
 end
