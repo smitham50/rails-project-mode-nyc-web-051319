@@ -1,0 +1,25 @@
+body {
+  color: #5e6565;
+}
+
+.navbar.navbar-inverse {
+  background-color: #378682;
+  border-color: #696464;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ececec;
+}
+
+
+.section {
+  float: left;
+  margin: 0 1.5%;
+  width: 58%;
+}
+
+.aside {
+  float: right;
+  margin: 0 1.5%;
+  width: 30%;
+}
