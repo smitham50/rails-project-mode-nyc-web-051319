@@ -51,7 +51,7 @@ Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 <h4>Reviews</h4>
 <ol>
 <% @trail.reviews.each do |review| %><br>
-  <li><b>Username:</b><b><%= User.find(review.user_id).username %></b></li>
+  <li><b><%= User.find(review.user_id).username %></b></li>
     <ul>
       <li>
         <%=review.comment %>
