@@ -13,6 +13,8 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
+    @review = Review.new
+
   end
 
 

@@ -50,4 +50,25 @@ Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 </div>
 
 
-<!-- Trail difficulties: green greenBlue blue blueBlack black -->
+
+<h4>Reviews</h4>
+<ol>
+<% @trail.reviews.each do |review| %><br>
+  <li><%= User.find(review.user_id).username %></li>
+    <ul>
+      <li>
+        <%=link_to review.comment, "/show/#{review.user_id}" %>
+      </li>
+    </ul>
+
+<% end  %>
+</ol>
+<% if logged_in? %>
+<%= form_for @review do |f| %>
+<%= f.hidden_field :trail_id, value: @trail.id %>
+<%= f.label "Review this Trail" %>
+<%= f.text_area(:comment, cols: 60, rows: 5)%>
+<%= f.submit  %>
+<% end %>
+<% end %><br>
+<%= button_to "Return to Trails", trails_path, method: "get" %>
