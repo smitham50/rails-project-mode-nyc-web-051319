@@ -9,4 +9,8 @@ def create
   redirect_to user_path(session[:user_id])
 end 
 
+# def destroy
+#   @user_trail = UserTrail.find()
+# end
+
 end

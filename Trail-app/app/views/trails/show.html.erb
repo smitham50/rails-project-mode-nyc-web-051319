@@ -2,17 +2,18 @@
 
 <br>
 
+<div class="section">  
 <% if !@trail.imgMedium.empty?%>
   <img src=<%=@trail.imgMedium%> alt=<%=@trail.name%> height=auto width=auto><br><br>
 <% end %>
 
-<iframe width="700" height="300" frameborder="0" style="border:0"
+<iframe width="800" height="300" frameborder="0" style="border:0"
  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGipspPekQG4tmYAZmqCuNArYcQSNdfyw&q=<%=@trail.geolocation%>"
  allowfullscreen>
-</iframe><br><br>
+</iframe>
+</div>
 
-<br>
-
+<div class="aside">
 Summary: <%= @trail.summary %><br><br>
 
 Difficulty: <%= @trail.difficulty %><br><br>
@@ -33,14 +34,7 @@ Highest Elevation: <%= "#{@trail.high} ft." %><br><br>
 
 Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 
-Condition Status: <%= @trail.conditionStatus %><br><br>
-
-Condition Details: <%= @trail.conditionDetails %><br><br>
-
-Condition Date: <%= @trail.conditionDate %><br><br>
-
 <% if logged_in? %>
   <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
 <% end %>
-
-<%= button_to "Return to Trails", trails_path, method: "get" %>
+</div>

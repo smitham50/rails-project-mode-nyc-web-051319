@@ -4,7 +4,7 @@ resources :trails, only: [:index, :show]
 
 resources :users, only: [:index, :create]
 
-resources :user_trails, only: [:new, :create]
+resources :user_trails, only: [:new, :create, :destroy]
 
 resources :reviews, only: [:new, :create]
 
