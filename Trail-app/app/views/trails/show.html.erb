@@ -1,75 +1,79 @@
-<h3><%= @trail.name %></h3>
+<div class="show">
+  <h3><%= @trail.name %></h3>
 
-<br>
+  <br>
 
-<div class="section">
-<% if !@trail.imgMedium.empty?%>
-  <img src=<%=@trail.imgMedium%> alt=<%=@trail.name%> height=auto width=auto><br><br>
-<% end %>
+  <div class="section">
+  <% if !@trail.imgMedium.empty?%>
+    <img src=<%=@trail.imgMedium%> alt=<%=@trail.name%> height=auto width=auto><br><br>
+  <% end %>
 
-<iframe width="800" height="300" frameborder="0" style="border:0"
- src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGipspPekQG4tmYAZmqCuNArYcQSNdfyw&q=<%=@trail.geolocation%>"
- allowfullscreen>
-</iframe>
-</div>
+  <iframe width="800" height="300" frameborder="0" style="border:0"
+   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGipspPekQG4tmYAZmqCuNArYcQSNdfyw&q=<%=@trail.geolocation%>"
+   allowfullscreen>
+  </iframe>
+  </div>
 
-<div class="aside">
-Summary: <%= @trail.summary %><br><br>
+  <div class="aside">
+  Summary: <%= @trail.summary %><br><br>
 
-<% if @trail.difficulty == "green" %>
-  <%= "Difficulty: Easy" %>
-<% elsif @trail.difficulty == "greeBlue" %>
-  <%= "Difficulty: Easy/Medium" %>
-<% elsif @trail.difficulty == "blue" %>
-  <%= "Difficulty: Medium" %>
-<% elsif @trail.difficulty == "blueBlack" %>
-  <%= "Difficulty: Medium/Hard" %>
-<% elsif @trail.difficulty == "black" %>
-  <%= "Difficulty: Hard" %>
-<% else %>
-  <%= "Difficulty: Ungraded"%>
-  <% end %><br><br>
+  <% if @trail.difficulty == "green" %>
+    <%= "Difficulty: Easy" %>
+  <% elsif @trail.difficulty == "greeBlue" %>
+    <%= "Difficulty: Easy/Medium" %>
+  <% elsif @trail.difficulty == "blue" %>
+    <%= "Difficulty: Medium" %>
+  <% elsif @trail.difficulty == "blueBlack" %>
+    <%= "Difficulty: Medium/Hard" %>
+  <% elsif @trail.difficulty == "black" %>
+    <%= "Difficulty: Hard" %>
+  <% else %>
+    <%= "Difficulty: Ungraded"%>
+    <% end %><br><br>
 
-Stars: <%= @trail.stars %><br><br>
+  Location: <%= @trail.location %><br><br>
 
-Location: <%= @trail.location %><br><br>
+  Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
 
-Website: <%= link_to @trail.url, "#{@trail.url}" %><br><br>
+  Length: <%= "#{@trail.length} miles" %><br><br>
 
-Length: <%= "#{@trail.length} miles" %><br><br>
+  Ascent: <%= "#{@trail.ascent} ft." %><br><br>
 
-Ascent: <%= "#{@trail.ascent} ft." %><br><br>
+  Descent: <%= "#{@trail.descent} ft." %><br><br>
 
-Descent: <%= "#{@trail.descent} ft." %><br><br>
+  Highest Elevation: <%= "#{@trail.high} ft." %><br><br>
 
-Highest Elevation: <%= "#{@trail.high} ft." %><br><br>
+  Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 
-Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
+  <% if logged_in? %>
+    <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
+  <% end %>
+  </div>
 
-<% if logged_in? %>
-  <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
-<% end %>
-</div>
+  <div class="revs">
 
-<div class="revs">
-<h4>Reviews</h4>
-<ul>
-<% @trail.reviews.each do |review| %><br>
-  <li><b><%= User.find(review.user_id).username %></b></li>
-    <ul>
-      <li>
-        <%=review.comment %>
-      </li>
-    </ul>
+    <% if logged_in? %>
+      <%= form_for @review do |f| %>
+        <%= f.hidden_field :trail_id, value: @trail.id %>
+        <%= f.label "Review this Trail" %>
+        <%= f.text_area(:comment, cols: 60, rows: 5)%>
+        <%= f.submit  %>
+      <% end %>
+    <% end %><br><br>
 
-<% end  %>
-</ul>
-<% if logged_in? %>
-<%= form_for @review do |f| %>
-<%= f.hidden_field :trail_id, value: @trail.id %>
-<%= f.label "Review this Trail" %>
-<%= f.text_area(:comment, cols: 60, rows: 5)%>
-<%= f.submit  %>
-<% end %>
-<% end %><br><br>
+    <h4>Reviews</h4>
+
+      <% @trail.reviews.each do |review| %><br>
+      <div class="revbox">
+
+      <b><%= User.find(review.user_id).username %></b><br>
+
+          <%=review.comment %>
+        </div>
+
+
+
+      <% end  %>
+
+  </div>
 </div>

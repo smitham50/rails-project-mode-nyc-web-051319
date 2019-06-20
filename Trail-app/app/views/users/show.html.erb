@@ -1,42 +1,43 @@
-<h3><%= @user.username %></h3><br>
+<!-- <div class="profilename"> -->
+  <h3><%= @user.username %></h3><br>
+<!-- </div> -->
 
+<div id="user-show-container">
+  <div class="hikes">
+    <h3>My Hikes</h3>
+      <% @user.trails.each do |trail| %>
+      <div class="hikecontent">
+        <div class="trailname">
+          <%= link_to trail.name, trail_path(trail) %><br><br>
+        <div class="delete">
+          <%= button_to "Remove From Trails", {action: "destroy", controller: "user_trails", id: trail.id}, method: :delete %>
+        </div>
+      </div>
+      </div>
+      <% end %>
+  </div>
 
-<div class="hikes">
-<h3>My Hikes</h3>
-<br>
-<ul>
-<% @user.trails.each do |trail| %>
-  <li><%= link_to trail.name, trail_path(trail) %></li><br>
-<% end %>
-</ul>
+  <div class="reviews">
+    <h3>My Reviews</h3>
+
+    <div class="reviews2">
+
+      <% @user.trails.each do |trail| %>
+        <% if @user.trail_reviews(trail).count > 0 %>
+        <div class="entry">
+            <%=link_to trail.name, "/trails/#{trail.id}"%>
+        <% end %>
+        <% @user.trail_reviews(trail).each do |review| %>
+          <br>
+            <div class="comment">
+              <%= review.comment%>
+            <div class="delete">
+              <%= button_to "Delete Review", {action: "destroy", controller: "reviews", id: review.id}, method: :delete %>
+            </div>
+          </div>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-<div class="reviews">
-<h3>My Reviews</h3>
-
-
-<ol>
-  <% @user.trails.each do |trail| %><br>
-    <% if @user.trail_reviews(trail).count > 0 %>
-      <li>
-        <%=link_to trail.name, "/trails/#{trail.id}"%>
-      </li>
-    <% end %>
-    <% @user.trail_reviews(trail).each do |review| %>
-      <ul>
-        <li>
-          <%= review.comment%>
-          <%= button_to "Delete Review", {action: "destroy", controller: "reviews", id: review.id}, method: :delete %>
-        </li>
-      </ul>
-    <%end%>
-  <% end %>
-</ol>
-
-
-
-
-
-
-<%= button_to "Return to Trails", trails_path, method: "get" %>
