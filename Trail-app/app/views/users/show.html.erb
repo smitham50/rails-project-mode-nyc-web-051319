@@ -1,10 +1,10 @@
-<!-- <div class="profilename"> -->
-  <h3><%= @user.username %></h3><br>
-<!-- </div> -->
+<div class="profilename">
+  <h3><%= "#{@user.username}'s Page" %></h3><br>
+</div>
 
 <div id="user-show-container">
   <div class="hikes">
-    <h3>My Hikes</h3>
+    <h3>My Hike Wishlist</h3>
       <% @user.trails.each do |trail| %>
       <div class="hikecontent">
         <div class="trailname">
@@ -22,12 +22,12 @@
 
     <div class="reviews2">
 
-      <% @user.trails.each do |trail| %>
-        <% if @user.trail_reviews(trail).count > 0 %>
+      <% @user.reviews.each do |review| %>
+        <% if @user.trail_reviews(review.trail).count > 0 %>
         <div class="entry">
-            <%=link_to trail.name, "/trails/#{trail.id}"%>
+            <%=link_to review.trail.name, "/trails/#{review.trail.id}"%>
         <% end %>
-        <% @user.trail_reviews(trail).each do |review| %>
+        <% @user.trail_reviews(review.trail).each do |review| %>
           <br>
             <div class="comment">
               <%= review.comment%>
