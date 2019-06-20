@@ -1,0 +1,169 @@
+
+.navbar.navbar-inverse {
+  background-color: #378682;
+  border-color: #696464;
+}
+
+body {
+  color: #5e6565;
+}
+
+
+/* //  USER SHOW PAGE START */
+.profilename {
+  text-align: center;
+}
+
+#user-show-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+  margin-left: 6%;
+  width: 95%;
+}
+
+.hikes {
+  /* // display: flex;
+  // justify-content: space-between;
+  // margin-top: .5%; */
+  margin-left: 17%;
+  width: 30%;
+}
+
+.hikecontent {
+  margin-top: 5%;
+  border-radius: 5%;
+  border: solid 1px;
+  border-color: #f7f7f7;
+  width: 100%;
+}
+
+.trailname {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews {
+  /* // float: right;
+  //
+  // margin-top: .5%;
+  // margin-left: 1.5%;
+  // border: solid 4px; */
+  margin-right: 17%;
+  width: 30%;
+  /* // height: 384px; */
+}
+
+.reviews2 {
+  // border: solid 4px;
+  overflow: scroll;
+  height: 450px;
+}
+
+.entry {
+  margin-top: 3%;
+  border-radius: 5%;
+  border: solid 1px;
+  border-color: #f7f7f7;
+  width: 85%;
+}
+
+.comment {
+  display: flex;
+  margin-top: 1%;
+  justify-content: space-between;
+}
+
+.delete {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+
+}
+/* //  USER SHOW PAGE END */
+
+/* TRAIL INDEX PAGE BEGIN */
+
+.index {
+  margin-left: 2%;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+
+/* TRAIL INDEX PAGE END */
+
+/* // TRAIL SHOW PAGE BEGIN */
+
+.revs {
+/* //   float: right; */
+  margin-top: 5%;
+  /* // margin-right: 7%;
+//   width: 30%; */
+}
+
+.trailname {
+  margin-left: 2%;
+}
+
+.trail-show-container {
+  /* // border: solid 3px red; */
+  margin-top: 2%;
+  margin-left: 2%;
+  display: flex;
+  /* // justify-content: space-around;
+  // justify-content: space-around;
+  // margin-left: 2%; */
+}
+
+.left{
+  /* // border: solid 3px blue; */
+  display: flex;
+  /* // justify-content: space-around; */
+  flex-direction: column;
+  /* // width: 30%; */
+}
+
+.right{
+  /* // border: solid 3px green; */
+  display: flex;
+  /* // justify-content: space-around; */
+  flex-direction: column;
+  margin-left: 4%;
+  margin-right: 3%;
+  /* // width: 30%; */
+}
+
+.iframe {
+  margin-top: 2%;
+}
+
+/* // .image {
+//   float: left;
+//   margin: 0 1.5%;
+//   width: 58%;
+// }
+// */
+/* // .aside {
+//   float: right;
+//   margin: 0 1.5%;
+//   margin-right: 7%;
+//   width: 30%;
+// } */
+
+.revbox {
+  border: solid 1px;
+  border-color: #f7f7f7;
+  width: 100%;
+}
+
+/* // TRAIL SHOW PAGE END */
+
+.thumbnail {
+  width: 30%;
+  text-align: center;
+}
