@@ -22,14 +22,15 @@ body {
 }
 
 //  USER SHOW PAGE START
-// .profilename {
-//   align-content: center;
-// }
+.profilename {
+  text-align: center;
+}
 
 #user-show-container {
   display: flex;
   justify-content: space-around;
-
+  margin-top: 2%;
+  margin-left: 6%;
   width: 95%;
 }
 
@@ -67,7 +68,7 @@ body {
 .reviews2 {
   // border: solid 4px;
   overflow: scroll;
-  height: 384px;
+  height: 450px;
 }
 
 .entry {
