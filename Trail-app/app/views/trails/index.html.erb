@@ -1,3 +1,4 @@
+<div class="index">
 <h3>Trails:</h3>
 
 <br>
@@ -11,10 +12,10 @@
 
 <% def distance_helper(trail) %>
   <% destination = trail.geolocation %>
-    <li><%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles from NYC" %></li><br>
+    <%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles from NYC" %><br><br>
 <% end %>
 
-<ul>
+
 <% if @trails == Trail.all %>
   <% @trails.distance_sort.each do |trail| %>
     <% distance_helper(trail) %>
@@ -24,4 +25,4 @@
       <% distance_helper(trail) %>
   <% end %>
 <% end %>
-</ul>
+</div>
