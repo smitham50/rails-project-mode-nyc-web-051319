@@ -4,6 +4,17 @@
   border-color: #696464;
 }
 
+.btn_con {
+  display: flex
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.welcome {
+  margin-top: 11%;
+  margin-left: 32%;
+}
+
 .login {
   margin-top: 11%;
   margin-left: 32%;
@@ -12,6 +23,16 @@
 .loginform {
   margin-top: 3%;
   text-align: center;
+}
+
+.login_bttn {
+  margin-top: 11%;
+  margin-left: 32%;
+}
+
+.signup_bttn {
+  margin-top: 11%;
+  margin-left: 32%;
 }
 
 body {
