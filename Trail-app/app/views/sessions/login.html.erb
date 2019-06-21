@@ -2,6 +2,9 @@
   <h1>Log In</h1>
 </div>
 
+<%= video_tag "Camping.mp4", autoplay: :autoplay,
+loop: :loop, id: "landing-video" %>
+
 <div class="loginform">
   <% if flash[:failed_login] %>
     <%= flash[:failed_login] %>
@@ -15,5 +18,4 @@
     <%= submit_tag "Submit"%>
   <%end%>
 
-  <br><%= button_to "Sign Up", signup_path, method: :get %>
 </div>
