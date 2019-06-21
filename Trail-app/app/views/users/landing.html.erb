@@ -1,1 +1,16 @@
-Landing
+<%= video_tag "Camping.mp4", autoplay: true,
+loop: true, id: "landing-video" %>
+
+
+
+<div class="welcome">
+  <h1>WELCOME TO HAPPY TRAILS</h1>
+  <div class= "btn_con">
+    <div class="login_bttn" >
+      <%= button_to "LOGIN", "/login", method: :get %>
+    </div>
+    <div class="signup_bttn">
+      <%= button_to "SIGN UP", "/signup", method: :get %>
+    </div>
+  </div>
+</div>
