@@ -30,5 +30,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/assets/videos
+/app/assets/videos
 .mp4
