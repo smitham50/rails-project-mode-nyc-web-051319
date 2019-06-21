@@ -11,9 +11,9 @@ loop: :loop, id: "landing-video" %>
   <% end %>
 
   <%= form_tag('/login') do %>
-    <%= label_tag  "User Name" %>
+    <%= label_tag  "User Name", "User Name", class: "login_label" %>
     <%= text_field_tag :username %>
-    <%= label_tag "Password"%>
+    <%= label_tag "Password", "Password", class: "login_label" %>
     <%= password_field_tag :password %>
     <%= submit_tag "Submit"%>
   <%end%>

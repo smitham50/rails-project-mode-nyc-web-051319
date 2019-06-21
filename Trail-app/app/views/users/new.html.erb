@@ -1,17 +1,18 @@
+<div class="login">
+  <h1>Sign Up Page</h1>
+</div>
+
+  <%= video_tag "Camping.mp4", autoplay: :autoplay,
+  loop: :loop, id: "landing-video" %>
+
+
+  <br>
 <div class="loginform">
-<h1>Sign Up Page</h1>
-
-<%= video_tag "Camping.mp4", autoplay: :autoplay,
-loop: :loop, id: "landing-video" %>
-
-
-<br>
-
-<%= form_for @user do |f| %>
-<%= f.label "User Name" %>
-<%= f.text_field :username %>
-<%= f.label "Password"%>
-<%= f.password_field:password %><br><br>
-<%= f.submit %>
-<% end %>
+  <%= form_for @user do |f| %>
+  <%= f.label "User Name", "User Name", class: "login_label" %>
+  <%= f.text_field :username %>
+  <%= f.label "Password", "Password", class: "login_label" %>
+  <%= f.password_field:password %>
+  <%= f.submit %>
+  <% end %>
 </div>
