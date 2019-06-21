@@ -15,10 +15,15 @@ class UsersController < ApplicationController
     redirect_to trails_path
   end
 
+
   private
 
   def user_params
     params.require(:user).permit(:username, :password)
   end
+
+   def landing
+
+   end 
 
 end
