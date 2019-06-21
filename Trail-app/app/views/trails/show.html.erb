@@ -58,7 +58,7 @@
       Lowest Elevation: <%= "#{@trail.low} ft." %><br><br>
 
       <% if logged_in? %>
-        <%= button_to "Add to Your Trails", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
+        <%= button_to "Add to Your Hike Wishlist", {controller: "user_trails", action: "create", trail_id: params[:id], user_id: session[:user_id]}, method: "post" %><br>
       <% end %>
     </div>
 
@@ -69,7 +69,7 @@
           <%= f.hidden_field :trail_id, value: @trail.id %>
           <%= f.label "Review this Trail" %><br>
           <%= f.text_area(:comment, cols: 60, rows: 5)%><br>
-          <%= f.submit %>
+          <%= f.submit "Submit Review" %>
         <% end %>
       <% end %><br><br>
 

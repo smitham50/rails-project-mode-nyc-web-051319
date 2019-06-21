@@ -1,15 +1,19 @@
-<h1>Log In</h1>
+<div class="login">
+  <h1>Log In</h1>
+</div>
 
-<% if flash[:failed_login] %>
-  <%= flash[:failed_login] %>
-<% end %>
+<div class="loginform">
+  <% if flash[:failed_login] %>
+    <%= flash[:failed_login] %>
+  <% end %>
 
-<%= form_tag('/login') do %>
-  <%= label_tag  "User Name" %>
-  <%= text_field_tag :username %>
-  <%= label_tag "Password"%>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Submit"%>
-<%end%>
+  <%= form_tag('/login') do %>
+    <%= label_tag  "User Name" %>
+    <%= text_field_tag :username %>
+    <%= label_tag "Password"%>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Submit"%>
+  <%end%>
 
-<br><%= button_to "Sign Up", signup_path, method: :get %>
+  <br><%= button_to "Sign Up", signup_path, method: :get %>
+</div>

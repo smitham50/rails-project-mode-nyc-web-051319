@@ -4,6 +4,16 @@
   border-color: #696464;
 }
 
+.login {
+  margin-top: 11%;
+  margin-left: 32%;
+}
+
+.loginform {
+  margin-top: 3%;
+  text-align: center;
+}
+
 body {
   color: #5e6565;
 }
@@ -26,12 +36,19 @@ body {
   /* // display: flex;
   // justify-content: space-between;
   // margin-top: .5%; */
-  margin-left: 17%;
-  width: 30%;
+  margin-left: 18%;
+  width: 28%;
+  overflow: scroll;
+  height: 520px;
+}
+
+.hikeitems{
+  overflow: scroll;
+  height: 520px;
 }
 
 .hikecontent {
-  margin-top: 5%;
+  margin-top: 6%;
   border-radius: 5%;
   border: solid 1px;
   border-color: #f7f7f7;
@@ -49,19 +66,19 @@ body {
   // margin-top: .5%;
   // margin-left: 1.5%;
   // border: solid 4px; */
+  margin-left: 4%;
   margin-right: 17%;
   width: 30%;
   /* // height: 384px; */
 }
 
 .reviews2 {
-  // border: solid 4px;
   overflow: scroll;
-  height: 450px;
+  height: 470px;
 }
 
 .entry {
-  margin-top: 3%;
+  margin-top: 5%;
   border-radius: 5%;
   border: solid 1px;
   border-color: #f7f7f7;
