@@ -4,7 +4,11 @@
 
 <div id="user-show-container">
   <div class="hikes">
-    <h3>My Hike Wishlist</h3>
+    <div class="hikename">
+      <h3>My Hike Wishlist</h3>
+    </div>
+    <div class="hikeitems">
+
       <% @user.trails.each do |trail| %>
       <div class="hikecontent">
         <div class="trailname">
@@ -15,6 +19,7 @@
       </div>
       </div>
       <% end %>
+    </div>
   </div>
 
   <div class="reviews">

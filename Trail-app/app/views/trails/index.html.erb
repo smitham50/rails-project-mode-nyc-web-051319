@@ -1,28 +1,39 @@
 <div class="index">
-<h3>Trails:</h3>
+  <h3>Trails:</h3>
 
-<br>
+  <br>
 
-<%= form_tag(trails_path, method: :get) do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Trail Name" %>
-  <%= submit_tag ("Search") %>
-<% end %>
-
-<br>
-
-<% def distance_helper(trail) %>
-  <% destination = trail.geolocation %>
-    <%= link_to trail["name"], trail_path(trail) %><%= "  #{trail.distance_from_ny.to_s} miles from NYC" %><br><br>
-<% end %>
-
-
-<% if @trails == Trail.all %>
-  <% @trails.distance_sort.each do |trail| %>
-    <% distance_helper(trail) %>
-    <% end %>
-<% else %>
-    <% @trails.each do |trail| %>
-      <% distance_helper(trail) %>
+  <%= form_tag(trails_path, method: :get) do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Trail Name" %>
+    <%= submit_tag ("Search") %>
   <% end %>
-<% end %>
+
+  <br>
+
+  <% def index_helper(trail) %>
+    <% destination = trail.geolocation %>
+      <% if !trail.imgSqSmall.empty?%>
+        <%= link_to image_tag(trail["imgSqSmall"], style: "width:130px;height:130px"), trail_path(trail) %><br>
+        <%= link_to trail["name"], trail_path(trail) %>
+      <% else%>
+      <%= link_to image_tag("https://www.happyfamilyart.com/wp-content/uploads/2014/10/step19.jpg", style: "width:130px;height:130px"), trail_path(trail) %><br>
+      <%= link_to trail["name"], trail_path(trail) %>
+      <% end %>
+  <% end %>
+
+  <div class="grid">
+    <% if @trails == Trail.all %>
+      <% @trails.distance_sort.each do |trail| %>
+      <div class="thumbnail">
+        <% index_helper(trail) %>
+      </div>
+        <% end %>
+    <% else %>
+        <% @trails.each do |trail| %>
+        <div class="thumbnail">
+          <% index_helper(trail) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
