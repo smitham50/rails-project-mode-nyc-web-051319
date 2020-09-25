@@ -27,7 +27,8 @@ def seed_trails
         latitude: trail["latitude"], 
         conditionStatus: trail["conditionStatus"], 
         conditionDetails: trail["conditionDetails"], 
-        conditionDate: trail["conditionDate"])
+        conditionDate: trail["conditionDate"]
+      )
       end
     end
   end
